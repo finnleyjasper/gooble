@@ -1,0 +1,12 @@
+!!! Bug that is kicking my ass
+*** Something I need to implement later
+&& QOL thing I need to do
+
+4/12
+*** Animations for PC movement
+    --> https://youtu.be/whzomFgjT50?si=tWk8LaP1CwvOQeFF&t=530
+
+&& Want to figure out how to slow down gradually??
+
+*** Invinsibility for dodge roll?
+
