@@ -1,6 +1,7 @@
 !!! Bug that is kicking my ass
 *** Something I need to implement later
 && QOL thing I need to do
+?? Question for the gang / decision to make?
 
 4/12
 *** Animations for PC movement
@@ -10,3 +11,7 @@
 
 *** Invinsibility for dodge roll?
 
+5/12
+- implemented a bunch of skeleton code / UML so far
+
+?? Diagonal movement?

@@ -7,7 +7,6 @@ public class InputMovementController : MovementController
     public float dodgeCoolDown = 1.5f;
     private bool dodgeRollAvailible = true;
 
-    // Update is called once per frame
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");

@@ -19,7 +19,7 @@ public class MovementController : MonoBehaviour
     public float movementSpeed = 5f;
 
     public Vector2 movement = new Vector2 (0,0);
-    public GameObject gameObject;
+    public CombatObject comObj;
 
     // Update is called once per frame
     void Update()
@@ -29,6 +29,6 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        gameObject.rigidbody2D.MovePosition(gameObject.rigidbody2D.position + movement * movementSpeed * Time.fixedDeltaTime);
+        comObj.rb2D.MovePosition(comObj.rb2D.position + movement * movementSpeed * Time.fixedDeltaTime);
     }
 }

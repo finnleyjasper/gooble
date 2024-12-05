@@ -15,4 +15,13 @@ public class PlayableCharacter : CombatObject
     {
 
     }
+
+    // different from setup... to implement later
+    public void Respawn()
+    {
+        Setup(); // collider and sprite enabled == true
+
+        // probably need to add stuff like respawning in a certain pos or preserving other info... idk
+
+    }
 }
