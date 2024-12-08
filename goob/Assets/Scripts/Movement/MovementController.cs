@@ -22,9 +22,9 @@ public class MovementController : MonoBehaviour
     public CombatObject comObj;
 
     // Update is called once per frame
-    void Update()
+    void Awake()
     {
-
+        comObj = GetComponent<CombatObject>();
     }
 
     void FixedUpdate()

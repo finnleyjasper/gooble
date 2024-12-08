@@ -6,6 +6,11 @@ public class Enemy : CombatObject
 {
     public Attack weakness;
 
+    void Awake()
+    {
+        rb2D.isKinematic = true; // means all enemies cannot be moved by collision with other rigidbodies
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -9,15 +9,14 @@ public class CombatObject : BasicGameObject
 
     [SerializeField] private int maxHealth;
     private int currentHealth;
-    private bool isAlive;
+
+    public Attack attack;
 
     //IMPLEMENT LATER
 
         // the string will be a readable (internal) name of the audioclip ie. "deadthFX"
         // AudioClip may need to change to AudioSource I can't remember how Unity works
     //public Dictionary<string, AudioClip> soundEffects;
-
-    public Attack attack;
 
     // public Animation animation;
 
@@ -29,19 +28,13 @@ public class CombatObject : BasicGameObject
     // Update is called once per frame
     void Update()
     {
-
+        // if key pressed, do attack here
     }
 
     override public void Setup()
     {
         // do i need to also call base.Setup() here to do those things as well? problem for later
         currentHealth = maxHealth;
-    }
-
-    public void Attack()
-    {
-        //attack.activateAttack();
-        // attack stuff
     }
 
     // virtual because i think enemies will need to override
@@ -81,5 +74,18 @@ public class CombatObject : BasicGameObject
 
         // play spx?
         // play animation?
+    }
+
+    // keep in mind this doesn't take into account if the gameobject is enabled or active or whatever
+    public bool IsAlive()
+    {
+        if (currentHealth > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

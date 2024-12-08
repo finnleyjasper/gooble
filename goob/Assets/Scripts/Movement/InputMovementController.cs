@@ -15,6 +15,7 @@ public class InputMovementController : MovementController
         if (Input.GetKeyDown(KeyCode.X) && dodgeRollAvailible)
         {
             DodgeRoll();
+            Debug.Log(comObj.name + " dodge rolled!");
         }
     }
 

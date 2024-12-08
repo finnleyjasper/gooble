@@ -12,7 +12,6 @@ using UnityEngine;
 public class BasicGameObject : MonoBehaviour
 {
     public Vector3 startingPosition = new Vector3 (0,0,0);
-    public Transform position;
     public SpriteRenderer spriteRenderer;
     public Collider2D coll2D;
     public Rigidbody2D rb2D;

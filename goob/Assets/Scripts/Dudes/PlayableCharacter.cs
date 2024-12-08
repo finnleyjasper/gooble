@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayableCharacter : CombatObject
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Setup()
     {
-
+        base.Setup();
+        SetAttack(null);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            attack.ActivateAttack();
+        }
     }
 
     // different from setup... to implement later
@@ -23,5 +26,16 @@ public class PlayableCharacter : CombatObject
 
         // probably need to add stuff like respawning in a certain pos or preserving other info... idk
 
+    }
+
+    public void SetAttack(Attack newAttack)
+    {
+        attack = newAttack;
+
+        if (attack == null)
+        {
+            GameObject basicGooble = GameObject.Find("Basic Gooble");
+            attack = basicGooble.GetComponent<Attack>();
+        }
     }
 }
