@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
@@ -18,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public void CombatObjectIsHit(CombatObject attacker, CombatObject victim)
     {
+        Debug.Log(attacker.name + " attacked " + victim.name);
         victim.decreaseHealth(attacker.attack.damage);
     }
 }

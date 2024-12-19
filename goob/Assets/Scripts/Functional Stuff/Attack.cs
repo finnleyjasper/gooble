@@ -39,7 +39,6 @@ public class Attack : MonoBehaviour
     {
         if (CanAttack())
         {
-            Debug.Log(user.name + " attacked!");
             StartCoroutine(EndAttackCountDown());
             lastActivated = Time.time;
 
@@ -52,12 +51,13 @@ public class Attack : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.collider != user.coll2D) // if the collision is not the users' attack against its own collider
+
+        if (collider != user.coll2D) // if the collision is not the users' attack against its own collider
         {
             GameManager gm = FindAnyObjectByType<GameManager>();
-            CombatObject victim = collision.gameObject.GetComponent<CombatObject>();
+            CombatObject victim = collider.gameObject.GetComponent<CombatObject>();
 
             gm.CombatObjectIsHit(user, victim);
         }
@@ -74,6 +74,7 @@ public class Attack : MonoBehaviour
     {
         // i havent checked this properly in my head this could be wrong maths
         // just slammed something in here so compiler wouldnt yell at me
+        // this code setup means there's a delay when you start the game before you can make your first attack
         if (Time.time - lastActivated + duration > coolDown)
         {
             return true;

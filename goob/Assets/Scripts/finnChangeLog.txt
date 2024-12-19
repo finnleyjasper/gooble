@@ -15,3 +15,6 @@
 - implemented a bunch of skeleton code / UML so far
 
 ?? Diagonal movement?
+
+19/12
+!! inv isnt picking up fish :P who knows why its so jank

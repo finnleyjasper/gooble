@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PlayableCharacter : CombatObject
 {
+    public GameObject inventory;
     public override void Setup()
     {
         base.Setup();
         SetAttack(null);
+        Transform inventoryTrans = transform.Find("Inventory");
+        inventory = inventoryTrans.gameObject;
+
     }
 
     // Update is called once per frame
