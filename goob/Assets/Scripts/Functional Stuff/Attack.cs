@@ -16,6 +16,12 @@ public class Attack : MonoBehaviour
     public Collider2D aoeCollider;
     public SpriteRenderer spriteRenderer;
 
+    private int offsetAmount = 2;
+
+    private Vector3 offset = new Vector3(0,0,0);
+
+    private Quaternion spriteRotation = new Quaternion (0,0,0,0);
+
     // public AudioSource?? soundFX;
     // public Animation?? animation;
 
@@ -31,8 +37,37 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        Vector3 offset = new Vector3 (0,1,0);
+
+        // update position of attack with player direction
+       SetPosition();
+    }
+
+    private void SetPosition()
+    {
+
+        if (user.movementController.ReturnDirection() == "left")
+        {
+            offset = new Vector3(-offsetAmount,0,0);
+            spriteRotation = new Quaternion(0,0,0,360);
+        }
+        else if (user.movementController.ReturnDirection() == "right")
+        {
+            offset = new Vector3(offsetAmount,0,0);
+            spriteRotation = new Quaternion(0,0,-90,90);
+        }
+        else if (user.movementController.ReturnDirection() == "up")
+        {
+            offset = new Vector3(0,offsetAmount,0);
+            spriteRotation = new Quaternion(0,0,0,0);
+        }
+        else if (user.movementController.ReturnDirection() == "down")
+        {
+            offset = new Vector3(0,-offsetAmount,0);
+           spriteRotation = new Quaternion(0,0,180,0);
+        }
+
         transform.position = user.transform.position + offset;
+        transform.rotation = spriteRotation;
     }
 
     public void ActivateAttack()

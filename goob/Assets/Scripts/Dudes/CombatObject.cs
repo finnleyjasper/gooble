@@ -58,7 +58,6 @@ public class CombatObject : BasicGameObject
 
         // play spx?
         // play animation?
-
     }
 
     public void decreaseHealth(int healthToRemove)
